@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-function List({ items, onDeleteItem, onToggleItem }) {
+function List({ items, onDeleteItem, onToggleItem , deleteAllItems}) {
   const [sortBy, setSortBy] = useState('input');
   let sortedItem;
 
@@ -23,6 +23,7 @@ function List({ items, onDeleteItem, onToggleItem }) {
           <option value="description">Sort By Description</option>
           <option value="packed">Sort By Packed</option>
         </select>
+        <button onClick={deleteAllItems}>Clear List</button>
       </div>
     </>
 

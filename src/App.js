@@ -13,6 +13,11 @@ function App() {
     setItems((items) => [...items , item])
   } 
 
+  function deleteAllItems(item){
+    const confirmed = window.confirm("Are You Sure To Delete List")
+    if(confirmed) setItems([])
+  } 
+
   function handleDeleteItem(id){
     setItems((items) => items.filter((item)=>item.id !== id))
   } 
@@ -25,7 +30,7 @@ function App() {
     <>
       <Header/>
       <Form onAddItem = {handleAddItem}/>
-      <List items = {items} onDeleteItem = {handleDeleteItem} onToggleItem = {handleToggleItem}/>
+      <List items = {items} onDeleteItem = {handleDeleteItem} onToggleItem = {handleToggleItem} deleteAllItems = {deleteAllItems}/>
       <Footer items = {items}/>
     </>
   );
