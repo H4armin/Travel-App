@@ -18,7 +18,7 @@ function App() {
   } 
 
   function handleToggleItem(id){
-    setItems((items) => items.map((item)=>item.id === id ? {...item , packed: !item.packe} : item))
+    setItems((items) => items.map((item)=>item.id === id ? {...item , packed: !item.packed} : item))
   } 
 
   return (
@@ -26,7 +26,7 @@ function App() {
       <Header/>
       <Form onAddItem = {handleAddItem}/>
       <List items = {items} onDeleteItem = {handleDeleteItem} onToggleItem = {handleToggleItem}/>
-      <Footer/>
+      <Footer items = {items}/>
     </>
   );
 }
